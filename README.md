@@ -64,8 +64,8 @@ Clear results with Clear All if you want a fresh start.
 
 📸 Screenshots
 Coming soon! Visualize the sleek GUI and keyword domination in action.
-🔒 Cybersecurity Notes
 
+🔒 Cybersecurity Notes
 Proxy Support: Use proxies to anonymize requests and avoid IP bans.
 Rate-Limiting Protection: Random delays (1-2s) between paginated requests keep you safe.
 Secure Coding: Built with error handling and thread safety for robust performance.
@@ -75,9 +75,7 @@ Want to join the keyword hacking crew? Fork the repo, make your changes, and sub
 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 💾 About the Creator
-Crafted by Abd El Mouhaimen, a cybersecurity sorcerer and code alchemist passionate about building tools that empower and secure. Connect with me on Telegram: @stiwy_xd.
-
-"Code like nobody's watching, secure like everyone's attacking." 🌌
+Crafted by Abd El Mouhaimen, Connect with me on Telegram: @stiwy_xd.
 
 
 Star the repo if you find this tool dope! Let's hack the keyword universe together!```
