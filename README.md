@@ -21,8 +21,7 @@ Crafted with precision, this tool features a sleek GUI, proxy support, and netwo
 ## 🛠️ Installation
 
 1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/internet-keyword-research-tool.git
+   git clone [https://github.com/yourusername/internet-keyword-research-tool.git](https://github.com/Stiwyxd/Keyword-Reasearch-Tool_V1.0_By_Stiwy)
    cd internet-keyword-research-tool
 
 
@@ -78,4 +77,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Crafted by Abd El Mouhaimen, Connect with me on Telegram: @stiwy_xd.
 
 
-Star the repo if you find this tool dope! Let's hack the keyword universe together!```
+Star the repo if you find this tool dope!
