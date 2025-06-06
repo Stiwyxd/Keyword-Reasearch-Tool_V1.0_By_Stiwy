@@ -1,0 +1,117 @@
+# Internet Keyword Research Tool - Tutorial
+
+### Install Python
+**Windows:** Download from python.org and check "Add Python to PATH"
+**macOS:** `brew install python` or download from python.org  
+**Linux:** `sudo apt install python3 python3-pip`
+
+### Install Dependencies
+```bash
+pip install requests beautifulsoup4 ttkbootstrap lxml
+```
+
+### Run the Tool
+```bash
+python keyword_tool.py
+```
+
+## Using the Keyword Research Tab
+
+### Basic Search
+1. Enter your seed keyword in the text field
+2. Set Max Results (default: 200) and Max Pages (1-10)
+3. Click "Search Keywords" or press Enter
+4. Wait for results to appear in the text area
+
+### Search Sources
+The tool automatically searches:
+- Google Autocomplete
+- Bing Suggestions
+- DuckDuckGo
+- YouTube
+- Amazon
+- Google Related Searches
+- Alphabet variations (A-Z)
+
+### Export Results
+- Click "Export" to save keywords to a text file
+- Use "Clear All" to reset and start a new search
+
+## Using the Proxy Manager Tab
+
+### Setting Up Proxies
+1. Create a text file with proxies (one per line): `192.168.1.1:8080`
+2. Click "Browse" and select your proxy file
+3. Choose proxy type: HTTP, SOCKS4, or SOCKS5
+4. Click "Load Proxies"
+
+### Validating Proxies
+1. Click "Validate Proxies" to test which ones work
+2. Valid proxies show checkmarks, invalid ones show X marks
+3. Check "Show Valid Proxies" to filter the list
+
+### Using Proxies
+1. Select a valid proxy from the list
+2. Click "Use Selected Proxy"
+3. All searches will now use this proxy
+4. Click "Go Proxyless" to disable proxy usage
+
+## Tips
+
+### Better Keyword Discovery
+- Start with broad terms, then get specific
+- Try question phrases: "how to", "what is", "best way"
+- Include buying intent words: "buy", "price", "review"
+- Use location-specific terms for local results
+
+### Performance
+- Use fewer max pages for faster results
+- Enable proxies if getting blocked frequently
+- Export keywords regularly to avoid losing data
+- Run one search at a time
+
+## Troubleshooting
+
+### Installation Issues
+```bash
+# If modules not found
+pip uninstall requests beautifulsoup4 ttkbootstrap
+pip install requests beautifulsoup4 ttkbootstrap
+
+# On Linux if GUI doesn't open
+sudo apt-get install python3-tk
+
+# Try python3 instead of python
+python3 keyword_tool.py
+```
+
+### Search Problems
+- **No keywords found:** Check internet connection, try different keywords, use proxy
+- **Connection timeout:** Enable proxy, check internet connection
+- **Too many requests:** You're rate-limited, use proxy or wait before retrying
+
+### Proxy Issues
+- Verify proxy format is `IP:PORT`
+- Test proxy in browser first
+- Try different proxy types
+- Use fresh, working proxies
+
+## FAQ
+
+**Q: Do I need proxies?**
+A: No, but recommended for intensive searches to avoid rate limiting.
+
+**Q: How many keywords can I find?**
+A: Typically 50-500 per search depending on your keyword.
+
+**Q: Can I run multiple searches at once?**
+A: No, run one search at a time to avoid conflicts.
+
+**Q: Which proxy type should I use?**
+A: HTTP proxies work for most cases. Try SOCKS5 if HTTP fails.
+
+## Support
+
+- Report bugs via GitHub issues
+- Contact developer: @stiwy_xd on Telegram
+- Include error messages and system info when reporting problems
