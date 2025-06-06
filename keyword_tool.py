@@ -1,3 +1,6 @@
+# Internet Keyword Research Tool
+# Made by Abd El Mouhaimen (@stiwy_xd)
+
 import requests
 import json
 import time
@@ -299,9 +302,12 @@ class ModernKeywordToolGUI:
         main_container.pack(fill=BOTH, expand=True, padx=25, pady=25)
         header_frame = ttk.Frame(main_container)
         header_frame.pack(fill=X, pady=(0, 25))
+        credits_label = ttk.Label(header_frame, text="MADE BY: ABD EL MOUHAIMEN", 
+                                 font=('Segoe UI', 14, 'bold'), foreground='#FF6B6B')
+        credits_label.pack(side=LEFT, padx=(10, 0))
         title_label = ttk.Label(header_frame, text="🔍 Internet Keyword Research Tool", 
                                font=('Segoe UI', 28, 'bold'), foreground='#00D4FF')
-        title_label.pack()
+        title_label.pack(pady=(5, 0))
         self.notebook = ttk.Notebook(main_container, bootstyle="info")
         self.notebook.pack(fill=BOTH, expand=True, pady=(0, 15))
         self.keyword_tab = ttk.Frame(self.notebook)
@@ -310,19 +316,64 @@ class ModernKeywordToolGUI:
         self.notebook.add(self.proxy_tab, text="🌐 Proxy Manager")
         self.setup_keyword_tab()
         self.setup_proxy_tab()
-        footer_frame = ttk.Frame(main_container)
-        footer_frame.pack(side=BOTTOM, pady=(15, 0))
-        author_label = ttk.Label(footer_frame, text="MADE BY: ABD EL MOUHAIMEN", 
-                                font=('Segoe UI', 12, 'bold'), foreground='#FF6B6B')
-        author_label.pack(side=LEFT, padx=(0, 10))
-        telegram_label = ttk.Label(footer_frame, text="@stiwy_xd", 
-                                 font=('Segoe UI', 12, 'underline'), foreground='#1DA1F2', cursor="hand2")
-        telegram_label.pack(side=LEFT)
-        telegram_label.bind("<Button-1>", lambda e: self.open_telegram())
         
-    def open_telegram(self):
+        footer_frame = ttk.Frame(main_container)
+        footer_frame.pack(side=BOTTOM, fill=X, pady=(15, 0))
+        
+        social_frame = ttk.Frame(footer_frame)
+        social_frame.pack(side=LEFT, padx=10)
+        
+        github_icon = ttk.Label(social_frame, text="🐙", font=('Segoe UI', 12))
+        github_icon.pack(side=LEFT, padx=(0, 5))
+        github_label = ttk.Label(
+            social_frame, 
+            text="GitHub", 
+            font=('Segoe UI', 12, 'underline'), 
+            foreground='#FFFFFF', 
+            cursor="hand2"
+        )
+        github_label.pack(side=LEFT)
+        github_label.bind("<Button-1>", lambda e: self.open_link("https://github.com/Stiwyxd/"))
+        
+        ttk.Label(social_frame, text="•", foreground='#555555').pack(side=LEFT, padx=10)
+        
+        telegram_icon = ttk.Label(social_frame, text="📱", font=('Segoe UI', 12))
+        telegram_icon.pack(side=LEFT, padx=(0, 5))
+        telegram_label = ttk.Label(
+            social_frame, 
+            text="Telegram", 
+            font=('Segoe UI', 12, 'underline'), 
+            foreground='#1DA1F2', 
+            cursor="hand2"
+        )
+        telegram_label.pack(side=LEFT)
+        telegram_label.bind("<Button-1>", lambda e: self.open_link("https://t.me/stiwy_xd"))
+        
+        credits_frame = ttk.Frame(footer_frame)
+        credits_frame.pack(side=RIGHT, padx=10)
+        
+        made_by_label = ttk.Label(
+            credits_frame,
+            text="MADE BY: ABD EL MOUHAIMEN",
+            font=('Segoe UI', 14, 'bold'),
+            foreground='#FF00FF'
+        )
+        made_by_label.pack(side=RIGHT)
+        
+        self.animate_glow(made_by_label)
+        
+    def animate_glow(self, label):
+        colors = ['#FF00FF', '#FF33FF', '#FF66FF', '#FF99FF', '#FFCCFF', '#FFFFFF', '#FFCCFF', '#FF99FF', '#FF66FF', '#FF33FF']
+        def cycle_colors(index=0):
+            color = colors[index]
+            label.config(foreground=color)
+            next_index = (index + 1) % len(colors)
+            label.after(200, lambda: cycle_colors(next_index))
+        cycle_colors()
+    
+    def open_link(self, url):
         import webbrowser
-        webbrowser.open("https://t.me/stiwy_xd")
+        webbrowser.open(url)
         
     def setup_keyword_tab(self):
         keyword_container = ttk.Frame(self.keyword_tab)
@@ -560,9 +611,9 @@ class ModernKeywordToolGUI:
         self.update_proxy_count()
         self.update_network_stats()
         if self.show_valid_var.get():
-            self.filter_proxy_list()
+            self.filter_proxy()
             
-    def filter_proxy_list(self):
+    def filter_proxy(self):
         self.proxy_listbox.delete(0, tk.END)
         if self.show_valid_var.get():
             for proxy in self.valid_proxies:
